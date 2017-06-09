@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两只鸟</title>
+    <style>
+            /*容器*/
+        .container_p2 {
+            background: url("P4/bg.jpg");
+            width: 640px;
+            height: 1008px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /*文字部分*/
+        .text1_p2 {
+            background: url("P4/5_1.png") no-repeat;
+            position: absolute;
+            width: 18px;
+            height: 222px;
+            margin-left: 550px;
+            margin-top: 40px;
+            display: none;
+        }
+
+        .text2_p2 {
+            background: url("P4/5_2.png") no-repeat;
+            position: absolute;
+            width: 18px;
+            height: 107px;
+            margin-left: 500px;
+            margin-top: 40px;
+            display: none;
+
+        }
+
+        .text3_p2 {
+            background: url("P4/5_3.png") no-repeat;
+            position: absolute;
+            width: 18px;
+            height: 217px;
+            margin-left: 450px;
+            margin-top: 40px;
+            display: none;
+
+        }
+        .text4_p2 {
+            background: url("P4/5_4.png") no-repeat;
+            position: absolute;
+            width: 17px;
+            height: 107px;
+            margin-left: 400px;
+            margin-top: 40px;
+            display: none;
+
+        }
+        .text5_p2 {
+            background: url("P4/5_5.png") no-repeat;
+            position: absolute;
+            width: 17px;
+            height: 216px;
+            margin-left: 350px;
+            margin-top: 40px;
+            display: none;
+
+        }
+
+        /*树木*/
+        .star_p2 {
+            background: url("P4/3.png");
+            width: 74px;
+            height: 160px;
+            position: absolute;
+            margin-left: 126px;
+            /*display: none;*/
+            animation: move_p2 3s infinite linear;
+        }
+
+        .point_p2{
+            background: url("P4/2.png");
+            width: 74px;
+            height: 160px;
+            position: absolute;
+            margin-top: 400px;
+            margin-left: 300px;
+        }
+
+
+        .bottom-title_p2 {
+            background: url("P4/5_6.png") no-repeat;
+            position: absolute;
+            margin-top: 750px;
+            width: 198px;
+            height: 185px;
+            margin-left: 30px;
+        }
+        .bird_p2{
+            background: url("P4/1.png");
+            position: absolute;
+            width: 471px;
+            height: 234px;
+            margin-left: 100px;
+            margin-top: 350px;
+            /*display: none;*/
+
+        }
+        @keyframes  move_p2{
+            0%{
+
+                transform: translate(10px,10px);
+                opacity: 1;
+            }
+            100%{
+                transform: translate(-30px,30px);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container_p2">
+    <div class="text1_p2"></div>
+    <div class="text2_p2"></div>
+    <div class="text3_p2"></div>
+    <div class="text4_p2"></div>
+    <div class="text5_p2"></div>
+    <div class="bird_p2"></div>
+    <div class="star_p2"></div>
+    <div class="point_p2"></div>
+    <div class="bottom-title_p2"></div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+$(function () {
+    setInterval(s_p2,2000);
+    /*文字样式启动*/
+    $(".text1_p2").slideDown(2000, function () {
+        $(".text2_p2").slideDown(2000, function () {
+            $('.text3_p2').slideDown(2000,function () {
+
+                $('.text4_p2').slideDown(2000,function () {
+                    $('.text5_p2').slideDown(2000);
+                })
+            });
+        })
+    });
+})
+    function s_p2() {
+    console.info("执行了" )
+        $('.bird_p2').css(
+
+            {
+//                transformOrigin:"bottom center",
+                transform:"rotate(360deg)"
+            }
+        )
+    }
+</script>
+</html>

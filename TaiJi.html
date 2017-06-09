@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>太极图片</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /*容器*/
+        .container_p3{
+            background: url("P2/bg.jpg");
+            width: 640px;
+            height: 1008px;
+            position: relative;
+            margin: 0 auto;
+        }
+        /*文字部分*/
+        .text1_p3{
+            background: url("P2/2_1.png") no-repeat;
+            width: 20px;
+            height: 166px;
+            position: absolute;
+            margin-left: 550px;
+            margin-top: 40px;
+            display: none;
+        }
+        .text2_p3{
+            background: url("P2/2_2.png") no-repeat;
+            width: 19px;
+            height: 136px;
+            position: absolute;
+            margin-left: 500px;
+            margin-top: 40px;
+            display: none;
+
+        }
+        .text3_p3{
+            background: url("P2/2_3.png") no-repeat;
+            width: 19px;
+            height: 136px;
+            position: absolute;
+            margin-left: 450px;
+            margin-top: 40px;
+            display: none;
+
+        }
+        /*气泡1*/
+        .pop1_p3{
+            background: url("P2/1.png");
+            width: 33px;
+            height: 33px;
+            position: absolute;
+            margin-left: 150px;
+            margin-top: 200px;
+            animation: popappear_p3 2s infinite linear;
+        }
+        /*气泡2*/
+        .pop2_p3{
+            background: url("P2/2.png");
+            width: 83px;
+            height: 82px;
+            position: absolute;
+            margin-top: 550px;
+            margin-left: 450px;
+            animation: popappear_p3 2s infinite linear;
+
+        }
+        .core_p3{
+            background: url("P2/3.png");
+            width: 377px;
+            height: 376px;
+            position: absolute;
+            margin-left: 131.5px;
+            margin-top:200px;
+            animation: turn_p3 3s infinite linear;
+        }
+        .bottom-title_p3{
+            background: url("P2/2_4.png") no-repeat;
+            width: 136px;
+            height: 148px;
+            position: absolute;
+            margin-top: 750px;
+            margin-left: 80px;
+        }
+        @keyframes popappear_p3 {
+            0%{
+                transform-origin: center;
+                transform: scale(0.1);
+            }
+            100%{
+
+                margin-top: 150px;
+                transform-origin: center;
+                transform: scale(1);
+            }
+        }
+        @keyframes turn_p3 {
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container_p3"  onclick="goHrefz('index.html')">
+    <div class="text1_p3" ></div>
+    <div class="text2_p3"></div>
+    <div class="text3_p3"></div>
+    <div class="pop1_p3"></div>
+    <div class="core_p3"></div>
+    <div class="pop2_p3"></div>
+    <div class="bottom-title_p3"></div>
+</div>
+</body>
+<script>
+
+    $(document).ready(function () {
+        $(".text1_p3").slideDown(2000,function () {
+            $(".text2_p3").slideDown(2000,function () {
+                $('.text3_p3').slideDown(2000);
+            })
+        })
+        setInterval(function () {
+            /*文字样式启动*/
+            var b=$('.text3_p3').css('display');
+            if(b=='block'){
+                $('.text1_p3').css({display:'none'});
+                $('.text2_p3').css({display:'none'});
+                $('.text3_p3').css({display:'none'})
+                setTimeout(function () {
+                    $(".text1_p3").slideDown(2000,function () {
+                        $(".text2_p3").slideDown(2000,function () {
+                            $('.text3_p3').slideDown(2000);
+                        })
+                    })
+                },1000)
+
+                console.log(1111)
+            }
+        },10000)
+
+
+
+
+
+    })
+</script>
+</html>

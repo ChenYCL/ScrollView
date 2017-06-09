@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>长生树</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /*容器*/
+        .container_p4 {
+            background: url("P3/bg.jpg");
+            width: 640px;
+            height: 1008px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /*文字部分*/
+        .text1_p4 {
+            background: url("P3/4_1.png") no-repeat;
+            width: 19px;
+            height: 192px;
+            position: absolute;
+            margin-left: 550px;
+            margin-top: 40px;
+            display: none;
+        }
+
+        .text2_p4 {
+            background: url("P3/4_2.png") no-repeat;
+            width: 17px;
+            height: 160px;
+            position: absolute;
+            margin-left: 500px;
+            margin-top: 40px;
+            display: none;
+
+        }
+
+        .text3_p4 {
+            background: url("P3/4_3.png") no-repeat;
+            width: 17px;
+            height: 158px;
+            position: absolute;
+            margin-left: 450px;
+            margin-top: 40px;
+            display: none;
+
+        }
+
+        /*树木*/
+        .pop1_p4 {
+            background: url("P3/2.png");
+            width: 514px;
+            height: 604px;
+            position: absolute;
+            margin-left: 126px;
+            transform:scale(0);
+            transform-origin:300px 600px;
+            animation: grow_p4 5s forwards linear;
+
+        }
+
+
+        .path_p4 {
+            background: url("P3/1.png") ;
+            width: 547px;
+            height: 408px;
+            position: absolute;
+            margin-left: 93px;
+            margin-top: 600px;
+        }
+
+        .bottom-title_p4 {
+            background: url("P3/4_4.png") no-repeat;
+            width: 192px;
+            height: 208px;
+            position: absolute;
+            margin-top: 750px;
+            margin-left: 30px;
+        }
+        .bird_p4{
+            background: url("P3/3.png");
+            width: 168px;
+            height: 112px;
+            position: absolute;
+            margin-left: 100px;
+            margin-top: 250px;
+            display: none;
+
+        }
+        @keyframes grow_p4 {
+
+            to{
+                transform: scale(1);
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="container_p4">
+    <div class="text1_p4"></div>
+    <div class="text2_p4"></div>
+    <div class="text3_p4"></div>
+    <div class="bird_p4"></div>
+    <div class="pop1_p4"></div>
+    <div class="path_p4"></div>
+    <div class="bottom-title_p4"></div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        /*文字样式启动*/
+        $(".text1_p4").slideDown(2000, function () {
+            $(".text2_p4").slideDown(2000, function () {
+                $('.text3_p4').slideDown(2000,function () {
+                    $('.pop1_p4').show(5000);
+                    $('.bird_p4').animate({
+                        opacity:"show",
+                        marginLeft:"50px",
+                        marginTop:"200px"
+                    },4000)
+                });
+            })
+        });
+
+
+    })
+</script>
+</html>
